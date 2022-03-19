@@ -31,7 +31,7 @@ class Visit(models.Model):
         )
 
     def get_duration(self):
-        self.delta = localtime() - localtime(self.entered_at)
+        self.delta = localtime(self.leaved_at) - localtime(self.entered_at)
         return self.delta
 
     def format_duration(self):
