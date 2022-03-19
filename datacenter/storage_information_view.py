@@ -19,7 +19,6 @@ def storage_information_view(request):
                                   'entered_at': localtime(visitor.entered_at),
                                   'duration': visitor.format_duration(),
                                   })
-        print(visitor.is_visit_long())
 
     visits = Visit.objects.all()
     long_visits = []
@@ -27,7 +26,7 @@ def storage_information_view(request):
         visit.get_duration()
         if visit.is_visit_long():
             long_visits.append(visit)
-    print(long_visits)
+
     context = {
         'non_closed_visits': non_closed_visits,  # не закрытые посещения
     }
