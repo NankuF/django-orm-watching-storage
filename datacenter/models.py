@@ -37,7 +37,4 @@ class Visit(models.Model):
         return str(self.get_duration()).split('.')[0]
 
     def is_visit_long(self):
-        if self.get_duration().total_seconds() > 3600:
-            return True
-        return False
-
+        return self.get_duration().total_seconds() > 3600
