@@ -2,8 +2,7 @@
 
 Django-проект, реализующий пульт охраны банка.
 
-## Environment
-### Подготовка Linux:<br>
+## Окружение
 
 Скачать git:
 ```bash
@@ -30,7 +29,7 @@ python -m venv venv
 pip install -r requirements.txt 
 ```
 
-## Run: <br>
+## Запуск: <br>
 
 Ввести в консоли код:
 ```bash
