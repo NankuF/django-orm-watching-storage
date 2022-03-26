@@ -15,15 +15,8 @@ def show_storage_information(request):
                                   'is_strange': visitor.is_visit_long()
                                   })
 
-    visits = Visit.objects.all()
-    long_visits = []
-    for visit in visits:
-        visit.get_duration()
-        if visit.is_visit_long():
-            long_visits.append(visit)
-
     context = {
-        'non_closed_visits': non_closed_visits,  # не закрытые посещения
+        'non_closed_visits': non_closed_visits,
     }
 
     return render(request, 'storage_information.html', context)
