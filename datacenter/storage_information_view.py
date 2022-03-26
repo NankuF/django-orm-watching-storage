@@ -4,7 +4,7 @@ from datacenter.models import Visit
 from django.shortcuts import render
 
 
-def storage_information_view(request):
+def show_storage_information(request):
     visitors_in_storage = Visit.objects.exclude(leaved_at__lte=localtime())
     non_closed_visits = [
         {

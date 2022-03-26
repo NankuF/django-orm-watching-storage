@@ -5,7 +5,7 @@ from datacenter.models import Visit
 from django.shortcuts import render
 
 
-def passcard_info_view(request, passcode):
+def show_passcard_info(request, passcode):
     passcard = Passcard.objects.get(passcode=passcode)
     all_visits_with_passcard = Visit.objects.filter(passcard=passcard)
 
