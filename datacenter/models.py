@@ -31,16 +31,15 @@ class Visit(models.Model):
         )
 
     def get_duration(self):
-        self.delta = localtime(self.leaved_at) - localtime(self.entered_at)
-        return self.delta
+        return localtime(self.leaved_at) - localtime(self.entered_at)
 
     def format_duration(self):
-        return str(self.delta).split('.')[0]
+        return str(self.get_duration()).split('.')[0]
 
     def is_visit_long(self):
-        if (localtime(self.leaved_at) - localtime(self.entered_at)).total_seconds() < 3600:
+        if self.get_duration().total_seconds() < 3600:
             return False
-        if self.delta.total_seconds() < 3600:
+        if self.get_duration().total_seconds() < 3600:
             return False
         return True
 
