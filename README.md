@@ -33,5 +33,5 @@ pip install -r requirements.txt
 
 Ввести в консоли код:
 ```bash
-python manage.py
+python manage.py runserver
 ```
