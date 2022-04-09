@@ -33,5 +33,5 @@ pip install -r requirements.txt
 
 Ввести в консоли код:
 ```bash
-python main.py
+python manage.py
 ```
