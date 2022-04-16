@@ -1,4 +1,5 @@
 import os
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -6,12 +7,12 @@ load_dotenv()
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('ENGINE'),
-        'HOST': os.getenv('HOST'),
-        'PORT': os.getenv('PORT'),
-        'NAME': os.getenv('NAME'),
-        'USER': os.getenv('USER1'),
-        'PASSWORD': os.getenv('PASSWORD'),
+        'ENGINE': os.getenv('PG_ENGINE'),
+        'HOST': os.getenv('PG_HOST'),
+        'PORT': os.getenv('PG_PORT'),
+        'NAME': os.getenv('PG_NAME'),
+        'USER': os.getenv('PG_USER1'),
+        'PASSWORD': os.getenv('PG_PASSWORD'),
     }
 }
 
@@ -19,7 +20,7 @@ INSTALLED_APPS = ['datacenter']
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-DEBUG = os.getenv('DEBUG')
+DEBUG = os.getenv('DEBUG', False)
 
 ROOT_URLCONF = 'project.urls'
 
