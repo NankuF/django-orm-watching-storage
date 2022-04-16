@@ -28,7 +28,19 @@ python -m venv venv
 ```bash
 pip install -r requirements.txt 
 ```
+Создать файл `.env` и добавить в него переменные
+```angular2html
+SECRET_KEY=your_secret_key (нужно придумать)
+DEBUG=TRUE or FALSE
 
+# DATABASE (значения берутся из документации к PostgreSql)
+PG_ENGINE=your_engine (django.db.backends.postgresql_psycopg2)
+PG_HOST=your_host
+PG_PORT=your_port
+PG_NAME=your_database_name
+PG_USER1=your_user
+PG_PASSWORD=your_password
+```
 ## Запуск: <br>
 
 Ввести в консоли код:
