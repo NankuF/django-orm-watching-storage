@@ -1,33 +1,30 @@
 import os
 
-from dotenv import load_dotenv
 import environs
 
-load_dotenv()
 env = environs.Env()
 env.read_env()
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('PG_ENGINE'),
-        'HOST': os.getenv('PG_HOST'),
-        'PORT': os.getenv('PG_PORT'),
-        'NAME': os.getenv('PG_NAME'),
-        'USER': os.getenv('PG_USER1'),
-        'PASSWORD': os.getenv('PG_PASSWORD'),
+        'ENGINE': env.str('PG_ENGINE'),
+        'HOST': env.str('PG_HOST'),
+        'PORT': env.str('PG_PORT'),
+        'NAME': env.str('PG_NAME'),
+        'USER': env.str('PG_USER1'),
+        'PASSWORD': env.str('PG_PASSWORD'),
     }
 }
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = env.str('SECRET_KEY')
 
 DEBUG = env.bool('DEBUG', False)
 
 ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES = [
